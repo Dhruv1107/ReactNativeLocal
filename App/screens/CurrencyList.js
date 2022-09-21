@@ -22,7 +22,7 @@ export default ({navigation, route = {}}) => {
   const insets = useSafeArea();
 
   const params = route.params || {};
-  const {activeCurrency} = params;
+  const {activeCurrency, onChange = () => {}} = params;
 
   return (
     <View
@@ -42,6 +42,7 @@ export default ({navigation, route = {}}) => {
               title={item}
               onPress={() => {
                 navigation.pop();
+                onChange(item);
               }}
               rightIcon={
                 selected && (

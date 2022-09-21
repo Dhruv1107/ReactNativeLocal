@@ -110,6 +110,7 @@ export default ({navigation}) => {
                 navigation.push('CurrencyList', {
                   title: 'Base Currency',
                   activeCurrency: baseCurrency,
+                  onChange: currency => setBaseCurrency(currency),
                 })
               }
               keyboardType="numeric"
@@ -125,6 +126,7 @@ export default ({navigation}) => {
                 navigation.push('CurrencyList', {
                   title: 'Quote Currency',
                   activeCurrency: quoteCurrency,
+                  onChange: currency => setQuoteCurrency(currency),
                 })
               }
             />
